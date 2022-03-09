@@ -113,15 +113,15 @@ public class test {
 
     @Tag("api_2")
     @Test
-    @DisplayName("test")
+    @DisplayName("2. Создание пользователя ")
     public void test2() {
         String body = "{\"name\": \"morpheus\",\"job\": \"leader\"}";
 
         JSONObject requestBody = new JSONObject();
-        requestBody.put("name", "morpheus");
-        requestBody.put("job", "leader");
+        requestBody.put("name", "Tomato");
+        requestBody.put("job", "Eat maket");
 
-        Response response3 = given()
+        Response response4 = given()
                 .baseUri("https://reqres.in/")
                 .contentType("application/json;charset=UTF-8")
                 .log().all()
@@ -133,8 +133,9 @@ public class test {
                 .log().all()
                 .extract().response();
 
-        JSONObject json = new JSONObject(response3);
-        Assertions.assertEquals(json.getString("name"), "morpheus");
-        Assertions.assertEquals(json.getString("job"), "leader");
+        String resp4 = response4.getBody().asString();
+        JSONObject json = new JSONObject(resp4);
+        Assertions.assertEquals(json.getString("name"), "Tomato");
+        Assertions.assertEquals(json.getString("job"), "Eat maket");
     }
 }
