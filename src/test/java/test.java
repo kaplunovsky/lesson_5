@@ -9,9 +9,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static io.restassured.RestAssured.given;
 
+@ExtendWith({ApiHooks.class})
 public class test {
 
     RequestSpecification requestSpec = new RequestSpecBuilder().build()
