@@ -1,3 +1,4 @@
+import hooks.ApiHooks;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
